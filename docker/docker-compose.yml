@@ -1,8 +1,8 @@
 version: '2'
 
 services:
-  app:
-      image: ubuntu:xenial
+  isucon_app:
+      build: ./app
       ports:
           - "80:80"
           - "25"
@@ -10,8 +10,8 @@ services:
       environment:
           - TZ=Asia/Tokyo
       links:
-          - db:db.com
-  db:
+          - isucon_db:db.com
+  isucon_db:
       image: mysql:5.7
       environment:
           - TZ=Asia/Tokyo
